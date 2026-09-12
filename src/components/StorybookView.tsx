@@ -34,7 +34,7 @@ import { triggerPageTurnSparkles } from '../utils/sparkleEffects';
 import { playPageFlipSound } from '../utils/audioSynth';
 import vintageRoseImage from '../assets/images/vintage_pink_rose_crest_1788045608311.jpg';
 import castleHeroImage from '../assets/images/fairytale_princess_castle_1788045594056.jpg';
-import pinkCastleImage from '../assets/images/pollinations_pink_castle.jpg';
+import pinkCastleImage from '../assets/images/user_pink_castle.png';
 import { FairytaleAlbumModal } from './FairytaleAlbumModal';
 import { FallingRosePetals } from './FallingRosePetals';
 
@@ -765,14 +765,16 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
         return (
           <div className="w-full h-full flex flex-col justify-between items-center text-center py-1 relative overflow-hidden">
             {/* Full Background Image */}
-            <div className="absolute inset-0 z-0 rounded-2xl overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 rounded-2xl overflow-hidden pointer-events-none bg-[#2d1228]">
               <img 
                 src={pinkCastleImage}
                 alt=""
-                className="w-full h-full object-cover filter brightness-[1.1] contrast-[1.05]"
+                className="w-full h-full object-cover filter brightness-75 contrast-110 saturate-[0.8]"
                 style={{ objectPosition: 'center' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/30 to-[#1a0816]/95" />
+              {/* Pinkish dark overlay for better text readability */}
+              <div className="absolute inset-0 bg-[#3a1226]/40 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/80 via-[#1a0816]/60 to-[#1a0816]/95" />
             </div>
             
             {/* Header */}
