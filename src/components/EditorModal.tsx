@@ -27,7 +27,9 @@ import {
   Link as LinkIcon,
   CheckCircle2,
   AlertCircle,
-  Loader2
+  Loader2,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { InvitationData, GalleryPhoto, ThemeStyle } from '../types';
 import { DEFAULT_INVITATION_DATA, PRESET_MUSIC_TRACKS } from '../data/defaultInvitation';
@@ -200,6 +202,30 @@ export const EditorModal: React.FC<EditorModalProps> = ({
       ...prev,
       photos: prev.photos.map((p) => (p.id === photoId ? { ...p, caption } : p))
     }));
+  };
+
+  // Move photo up
+  const handleMovePhotoUp = (index: number) => {
+    if (index === 0) return;
+    setFormData((prev) => {
+      const newPhotos = [...prev.photos];
+      const temp = newPhotos[index - 1];
+      newPhotos[index - 1] = newPhotos[index];
+      newPhotos[index] = temp;
+      return { ...prev, photos: newPhotos };
+    });
+  };
+
+  // Move photo down
+  const handleMovePhotoDown = (index: number) => {
+    if (index === formData.photos.length - 1) return;
+    setFormData((prev) => {
+      const newPhotos = [...prev.photos];
+      const temp = newPhotos[index + 1];
+      newPhotos[index + 1] = newPhotos[index];
+      newPhotos[index] = temp;
+      return { ...prev, photos: newPhotos };
+    });
   };
 
   // Audio upload handler
@@ -587,9 +613,29 @@ export const EditorModal: React.FC<EditorModalProps> = ({
                             alt={photo.caption}
                             className="w-full h-full object-cover"
                           />
+                          <div className="absolute top-1 left-1 flex gap-1">
+                            {idx > 0 && (
+                              <button
+                                onClick={() => handleMovePhotoUp(idx)}
+                                className="p-1.5 rounded-full bg-stone-900/80 text-white hover:bg-stone-800 shadow-md backdrop-blur-sm"
+                                title="Mover a la izquierda"
+                              >
+                                <ChevronLeft className="w-3.5 h-3.5" />
+                              </button>
+                            )}
+                            {idx < formData.photos.length - 1 && (
+                              <button
+                                onClick={() => handleMovePhotoDown(idx)}
+                                className="p-1.5 rounded-full bg-stone-900/80 text-white hover:bg-stone-800 shadow-md backdrop-blur-sm"
+                                title="Mover a la derecha"
+                              >
+                                <ChevronRight className="w-3.5 h-3.5" />
+                              </button>
+                            )}
+                          </div>
                           <button
                             onClick={() => handleDeletePhoto(photo.id)}
-                            className="absolute top-1 right-1 p-1.5 rounded-full bg-rose-600/90 text-white hover:bg-rose-500 shadow-md"
+                            className="absolute top-1 right-1 p-1.5 rounded-full bg-rose-600/90 text-white hover:bg-rose-500 shadow-md backdrop-blur-sm"
                             title="Eliminar foto"
                           >
                             <Trash2 className="w-3.5 h-3.5" />

@@ -249,7 +249,15 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                 {/* Caption Footer */}
                 <div className="w-full text-center mt-3 px-4">
                   <p className="text-[11px] font-serif italic text-rose-300/80 mt-0.5">
-                    Celebrando los 15 Años de {quinceaneraName}
+                    {lightboxIndex !== null ? [
+                      "Un momento mágico ✦",
+                      "✦ Día de ensueño ✦",
+                      "Capturando la magia",
+                      "Sonrisas eternas",
+                      "✦ Recuerdos inolvidables",
+                      "Instantes de felicidad",
+                      "Un cuento de hadas ✦"
+                    ][lightboxIndex % 7] : ""}
                   </p>
                 </div>
               </div>
