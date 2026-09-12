@@ -769,9 +769,9 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               <img 
                 src={castleHeroImage}
                 alt=""
-                className="w-full h-full object-cover object-top scale-[1.4] origin-top filter brightness-[1.15] contrast-[1.05]"
+                className="w-full h-full object-cover object-top scale-[2.5] origin-top filter brightness-[1.15] contrast-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/10 to-[#1a0816]/95" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/30 to-[#1a0816]/95" />
             </div>
             
             {/* Header */}
@@ -1143,9 +1143,11 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             onClick={handlePrev}
             disabled={currentPage === 0 || isFlipping}
             className={`flex items-center gap-1 px-3 py-1 rounded-full font-cinzel text-[11px] font-bold tracking-wider transition-all cursor-pointer ${
-              currentPage === 0 || isFlipping
-                ? 'opacity-25 cursor-not-allowed bg-stone-900/40 text-stone-500 border border-stone-800'
-                : 'bg-[#35152d] hover:bg-[#4a1d3f] text-rose-100 border border-rose-300/40 shadow-sm active:scale-95'
+              currentPage === 0
+                ? 'opacity-0 pointer-events-none'
+                : isFlipping
+                  ? 'opacity-50 cursor-not-allowed bg-stone-900/40 text-stone-500 border border-stone-800'
+                  : 'bg-[#35152d] hover:bg-[#4a1d3f] text-rose-100 border border-rose-300/40 shadow-sm active:scale-95'
             }`}
           >
             <ChevronLeft className="w-3.5 h-3.5" />
@@ -1156,9 +1158,11 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             onClick={handleNext}
             disabled={currentPage === totalPages - 1 || isFlipping}
             className={`flex items-center gap-1 px-3 py-1 rounded-full font-cinzel text-[11px] font-bold tracking-wider transition-all cursor-pointer ${
-              currentPage === totalPages - 1 || isFlipping
-                ? 'opacity-25 cursor-not-allowed bg-stone-900/40 text-stone-500 border border-stone-800'
-                : 'bg-gradient-to-r from-[#d87c98] to-[#cc6886] hover:from-[#c96987] hover:to-[#b85474] text-white border border-rose-200/50 shadow-sm active:scale-95'
+              currentPage === totalPages - 1
+                ? 'opacity-0 pointer-events-none'
+                : isFlipping
+                  ? 'opacity-50 cursor-not-allowed bg-stone-900/40 text-stone-500 border border-stone-800'
+                  : 'bg-gradient-to-r from-[#d87c98] to-[#cc6886] hover:from-[#c96987] hover:to-[#b85474] text-white border border-rose-200/50 shadow-sm active:scale-95'
             }`}
           >
             <span>Siguiente Hoja</span>
