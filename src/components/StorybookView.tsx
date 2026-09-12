@@ -483,7 +483,19 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               {/* Dress Code Card */}
               <div className="rounded-2xl bg-[#35152d]/90 border border-rose-300/35 p-3 text-center shadow-md">
                 <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <Shirt className="w-4 h-4 text-rose-300" />
+                  <div className="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-rose-300">
+                      <path d="M12 2c-1.5 2-2 4-3 6l-3 1.5 2 2.5 1-1 1.5 11h9l1.5-11 1 1 2-2.5L15 8c-1-2-1.5-4-3-6Z" />
+                      <path d="M9 8h6" />
+                      <path d="M10.5 12h3" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-rose-300">
+                      <path d="M6 3h12l2 6v12H4V9l2-6z" />
+                      <path d="M12 3v18" />
+                      <path d="M10 3l-4 8 6 4" />
+                      <path d="M14 3l4 8-6 4" />
+                    </svg>
+                  </div>
                   <span className="text-[10px] font-cinzel uppercase tracking-[0.2em] font-bold text-rose-200">
                     CÓDIGO DE VESTIMENTA
                   </span>
@@ -925,12 +937,6 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
           <span className="text-amber-200 truncate max-w-[120px] sm:max-w-[180px]">{currentChapter.title}</span>
         </button>
 
-        {/* Page Turn Visual Indicator */}
-        <div className="flex items-center gap-1.5 text-[10.5px] font-serif text-rose-200/80 italic">
-          <Sparkles className="w-3 h-3 text-amber-300 animate-spin" />
-          <span className="hidden sm:inline">Hojea deslizando o tocando</span>
-          <span className="sm:hidden">Desliza para hojear ➔</span>
-        </div>
 
         {/* Page Counter */}
         <div className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#35152d]/85 border border-rose-300/40 text-rose-200 text-[11px] font-cinzel backdrop-blur-md shadow-md">
