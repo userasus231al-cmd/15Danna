@@ -293,15 +293,15 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </div>
 
             {/* Top Floating Music Badge */}
-            <div className="relative z-10 w-full flex justify-between items-center px-1">
-              <div className="flex items-center gap-1 text-[10px] font-cinzel text-amber-300 font-bold uppercase tracking-wider">
+            <div className="relative z-10 w-full flex justify-between items-center px-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+              <div className="flex items-center gap-1 text-[10px] font-cinzel text-amber-300 font-bold uppercase tracking-wider drop-shadow-md">
                 <Sparkles className="w-3 h-3 text-amber-300" />
-                <span>Mis XV Años</span>
+                <span className="text-white">Mis XV Años</span>
               </div>
 
               <button
                 onClick={onToggleMusic}
-                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3a1835]/80 hover:bg-[#4d2046] border border-rose-300/40 text-rose-100 text-[11px] backdrop-blur-md cursor-pointer transition-all active:scale-95"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3a1835]/90 hover:bg-[#4d2046] border border-rose-300/60 text-white text-[11px] backdrop-blur-md cursor-pointer transition-all active:scale-95 shadow-md"
               >
                 <Music className={`w-3 h-3 text-rose-300 ${isPlayingMusic ? 'animate-bounce' : ''}`} />
                 <span className="uppercase text-[9.5px] font-semibold">Música</span>
@@ -310,38 +310,41 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </div>
 
             {/* Center Hero Block */}
-            <div className="relative z-10 my-auto flex flex-col items-center max-w-sm px-2">
+            <div className="relative z-10 my-auto flex flex-col items-center max-w-sm px-2 py-6">
+              {/* Subtle radial dark glow behind text for better readability */}
+              <div className="absolute inset-0 bg-radial from-[#1a0816]/70 via-[#2d1228]/40 to-transparent rounded-full blur-2xl -z-10" />
+
               {/* Crown */}
-              <div className="w-10 h-10 rounded-full bg-gradient-to-b from-amber-400/25 to-rose-500/25 border border-amber-300/60 flex items-center justify-center text-amber-300 shadow-md mb-1 backdrop-blur-sm">
-                <Crown className="w-5 h-5 text-amber-300 drop-shadow-[0_2px_6px_rgba(251,191,36,0.8)]" />
+              <div className="w-10 h-10 rounded-full bg-gradient-to-b from-amber-400/30 to-rose-500/30 border border-amber-300/80 flex items-center justify-center text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.3)] mb-2 backdrop-blur-md">
+                <Crown className="w-5 h-5 text-amber-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" />
               </div>
 
               {/* MIS XV */}
-              <span className="text-[11px] sm:text-xs font-cinzel font-semibold text-rose-100 uppercase tracking-[0.35em] drop-shadow-sm mb-0.5">
+              <span className="text-[12px] sm:text-xs font-cinzel font-bold text-white uppercase tracking-[0.35em] drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] mb-1">
                 {data.subtitle || 'MIS XV'}
               </span>
 
               {/* Quinceañera Name: "Danna" */}
               <h1
-                className="text-5xl sm:text-6xl md:text-7xl font-script text-white font-normal py-0.5 tracking-wide text-glow-rose drop-shadow-[0_4px_20px_rgba(244,114,182,0.8)]"
-                style={{ fontFamily: "'Great Vibes', cursive" }}
+                className="text-5xl sm:text-6xl md:text-7xl font-script text-white font-normal py-0.5 tracking-wide drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]"
+                style={{ fontFamily: "'Great Vibes', cursive", textShadow: '0 0 20px rgba(244,114,182,0.8), 0 4px 8px rgba(0,0,0,0.9)' }}
               >
                 {data.quinceaneraName}
               </h1>
 
               {/* Fairytale Quote */}
-              <p className="text-[10.5px] sm:text-xs font-cinzel text-rose-100 uppercase tracking-[0.18em] leading-relaxed drop-shadow-md mt-1 max-w-xs font-medium">
+              <p className="text-[11px] sm:text-xs font-cinzel text-white uppercase tracking-[0.18em] leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] mt-2 max-w-xs font-bold">
                 {data.titlePhrase?.toLowerCase().includes('perfecto')
                   ? 'ÉRASE UNA VEZ UNA PRINCESA QUE SOÑABA CON SU CUENTO DE HADAS...'
                   : (data.titlePhrase || 'Érase una vez una princesa que soñaba con su cuento de hadas...')}
               </p>
-              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-1 max-w-xs">
+              <p className="text-sm sm:text-base font-serif italic text-rose-50 mt-1 max-w-xs drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] font-medium">
                 "Un sueño que florece bajo la luz de las estrellas para recordar por siempre."
               </p>
             </div>
 
             {/* Bottom Action: Abrir Cuento */}
-            <div className="relative z-10 w-full flex flex-col items-center gap-1.5 pb-1">
+            <div className="relative z-10 w-full flex flex-col items-center gap-1.5 pb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               <button
                 onClick={handleNext}
                 className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#d87c98] via-[#e28ca4] to-[#cc6886] hover:from-[#c96987] hover:to-[#b85474] text-white font-cinzel font-bold text-xs tracking-[0.2em] uppercase shadow-lg shadow-rose-950/60 active:scale-95 transition-all cursor-pointer border border-rose-200/50"
@@ -350,7 +353,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                 <span>Hojear Cuento Mágico</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
-              <span className="text-[9.5px] font-sans text-rose-200/70 tracking-wider">
+              <span className="text-[10px] font-sans font-bold text-white tracking-wider">
                 Toca o desliza para pasar la hoja
               </span>
             </div>
