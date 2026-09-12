@@ -769,12 +769,12 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               <img 
                 src={pinkCastleImage}
                 alt=""
-                className="w-full h-full object-cover filter brightness-75 contrast-110 saturate-[0.8]"
+                className="w-full h-full object-cover filter brightness-95 contrast-[1.05] saturate-[0.9]"
                 style={{ objectPosition: 'center' }}
               />
               {/* Pinkish dark overlay for better text readability */}
-              <div className="absolute inset-0 bg-[#3a1226]/40 mix-blend-multiply" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/80 via-[#1a0816]/60 to-[#1a0816]/95" />
+              <div className="absolute inset-0 bg-[#3a1226]/20 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/50 via-[#1a0816]/40 to-[#1a0816]/90" />
             </div>
             
             {/* Header */}
