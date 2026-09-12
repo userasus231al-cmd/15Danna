@@ -617,10 +617,6 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
 
             {/* Photos View Hint */}
             <div className="flex flex-col items-center gap-0.5">
-              <span className="text-[9.5px] font-serif text-rose-200/90 italic flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5 text-amber-300" />
-                "Los recuerdos más hermosos son los que dejamos grabados en el alma."
-              </span>
               <span className="text-[9px] font-serif text-rose-300/70 italic">
                 Pasa la hoja para ver la opción de regalo ➔
               </span>
@@ -723,7 +719,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               </button>
 
               {/* Thank you note */}
-              <div className="flex items-center justify-center gap-1 text-[9.5px] text-rose-200 font-serif italic">
+              <div className="flex items-center justify-center gap-1 text-[11px] sm:text-xs text-rose-200 font-serif italic mt-2">
                 <Heart className="w-3 h-3 text-[#e89db4] fill-[#e89db4]" />
                 <span>¡Muchas gracias por acompañarme y ser parte de mi cuento de hadas!</span>
               </div>
@@ -809,14 +805,14 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </form>
 
             {/* Farewell Signature */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center -mt-1 sm:mt-0 pb-1">
               <p
-                className="text-xl sm:text-2xl text-rose-200 font-script leading-none"
+                className="text-4xl sm:text-5xl text-rose-200 font-script leading-none"
                 style={{ fontFamily: "'Great Vibes', cursive" }}
               >
                 {data.quinceaneraName}
               </p>
-              <span className="text-[9px] font-serif text-rose-300/80 italic mt-0.5">
+              <span className="text-xs sm:text-sm font-serif text-rose-300/80 italic mt-1">
                 "¡Te espero con ilusión para vivir juntos una noche mágica e inolvidable!" ✨
               </span>
             </div>
