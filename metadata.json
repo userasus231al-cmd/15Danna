@@ -1,0 +1,6 @@
+{
+  "name": "Mis 15 Años - Danna",
+  "description": "Invitación web interactiva estilo libro de cuentos para los 15 años de Danna. Con música, confirmación de asistencia por WhatsApp, ubicación en Quinta Marbella (San Lorenzo), álbum de recuerdos y datos para regalo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
