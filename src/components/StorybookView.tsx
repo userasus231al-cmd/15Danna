@@ -482,28 +482,42 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
 
               {/* Dress Code Card */}
               <div className="rounded-2xl bg-[#35152d]/90 border border-rose-300/35 p-3 text-center shadow-md">
-                <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <div className="flex items-center gap-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-rose-300">
-                      <path d="M12 2c-1.5 2-2 4-3 6l-3 1.5 2 2.5 1-1 1.5 11h9l1.5-11 1 1 2-2.5L15 8c-1-2-1.5-4-3-6Z" />
-                      <path d="M9 8h6" />
-                      <path d="M10.5 12h3" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-rose-300">
-                      <path d="M6 3h12l2 6v12H4V9l2-6z" />
-                      <path d="M12 3v18" />
-                      <path d="M10 3l-4 8 6 4" />
-                      <path d="M14 3l4 8-6 4" />
-                    </svg>
-                  </div>
+                <div className="flex items-center justify-center gap-1.5 mb-1.5">
                   <span className="text-[10px] font-cinzel uppercase tracking-[0.2em] font-bold text-rose-200">
                     CÓDIGO DE VESTIMENTA
                   </span>
                 </div>
 
-                <div className="text-xs sm:text-sm font-cinzel font-bold text-amber-200 uppercase tracking-widest">
-                  {data.dressCode.title || 'ELEGANTE'}
+                <div className="flex items-center justify-center gap-3 mb-1">
+                  {/* Dress SVG replacing user's drawing */}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-rose-300 opacity-90 drop-shadow-sm">
+                    <path d="M22 8v8 M42 8v8"/>
+                    <path d="M22 16 c 0 -4, 10 -4, 10 2 c 0 -6, 10 -6, 10 -2 c 2 8, -4 16, -4 16 H26 c 0 0, -6 -8, -4 -16 Z"/>
+                    <path d="M26 32 h12"/>
+                    <path d="M26 32 C 16 40, 10 50, 12 58 C 20 60, 44 60, 52 58 C 54 50, 48 40, 38 32"/>
+                    <path d="M28 32 C 24 45, 24 58, 24 58"/>
+                    <path d="M36 32 C 40 45, 40 58, 40 58"/>
+                    <path d="M32 32 v26"/>
+                  </svg>
+
+                  <div className="text-xs sm:text-sm font-cinzel font-bold text-amber-200 uppercase tracking-widest mt-1">
+                    {data.dressCode.title || 'ELEGANTE'}
+                  </div>
+
+                  {/* Suit SVG replacing user's drawing */}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-10 h-10 text-rose-300 opacity-90 drop-shadow-sm">
+                    <path d="M24 12 L12 20 L14 56 H50 L52 20 L40 12"/>
+                    <path d="M24 12 L32 36 L40 12"/>
+                    <path d="M26 24 L32 30 L38 24"/>
+                    <path d="M32 20 L30 38 L32 42 L34 38 Z"/>
+                    <path d="M26 12 L32 20 L38 12"/>
+                    <path d="M32 42 V56"/>
+                    <path d="M42 26 L48 24"/>
+                    <circle cx="32" cy="40" r="1.2" fill="currentColor"/>
+                    <circle cx="32" cy="46" r="1.2" fill="currentColor"/>
+                  </svg>
                 </div>
+
                 <p className="text-[10px] sm:text-[10.5px] font-serif text-rose-200/85 mt-0.5 mb-2 leading-tight">
                   {data.dressCode.description || 'Vestimenta de gala y elegante para una noche de cuento de hadas.'}
                 </p>
