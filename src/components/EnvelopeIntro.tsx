@@ -293,10 +293,12 @@ export const EnvelopeIntro: React.FC<EnvelopeIntroProps> = ({ data, onOpen, isOp
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-4 flex items-center justify-center gap-1.5 text-rose-200/80 text-[11px] font-serif italic"
+            className="mt-4 flex flex-col items-center justify-center gap-1 text-rose-200/80 text-[11px] font-serif italic"
           >
-            <Music className="w-3.5 h-3.5 text-rose-300 animate-bounce" />
-            <span>Vals "Once Upon a Dream" listo para acompañarte</span>
+            <div className="flex items-center gap-1.5">
+              <Music className="w-3.5 h-3.5 text-rose-300 animate-pulse" />
+              <span>Por favor sube el volumen, esta invitación contiene música</span>
+            </div>
           </motion.div>
         </div>
       </motion.div>

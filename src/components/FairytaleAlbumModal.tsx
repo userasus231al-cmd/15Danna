@@ -192,19 +192,11 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                         : 'border-rose-400/35 hover:border-rose-200 hover:shadow-rose-500/20'
                     }`}
                   >
-                    {/* Main Photo Badge */}
-                    {isMainPhoto && (
-                      <div className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full bg-amber-400/90 backdrop-blur-md text-stone-950 text-[9px] font-cinzel font-bold tracking-wider flex items-center gap-1 shadow-md">
-                        <Star className="w-2.5 h-2.5 fill-current" />
-                        <span>Foto Principal</span>
-                      </div>
-                    )}
-
                     {/* Image or Fairytale Fallback Card */}
                     {!hasError ? (
                       <img
                         src={photo.url}
-                        alt={photo.caption}
+                        alt="Foto del álbum"
                         onError={() => handleImageError(photo.id)}
                         className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700"
                         loading="lazy"
@@ -212,9 +204,6 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                     ) : (
                       <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center p-3 text-center bg-gradient-to-b from-[#3d1735] to-[#250d21]">
                         <Camera className="w-8 h-8 text-rose-300/60 mb-2" />
-                        <span className="text-[11px] font-serif font-bold text-rose-100 line-clamp-2">
-                          {photo.caption}
-                        </span>
                         <span className="text-[9px] text-amber-300/80 mt-1 font-cinzel">
                           Mis 15 Años
                         </span>
@@ -223,12 +212,9 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
 
                     {/* Gradient Overlay & Caption */}
                     <div className="relative z-10 p-2.5 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end">
-                      <p className="text-[11px] font-serif font-semibold text-rose-100 leading-tight drop-shadow-xs line-clamp-2">
-                        {photo.caption}
-                      </p>
-                      <div className="flex items-center justify-between mt-1 text-[9px] text-rose-300/80 font-sans">
+                      <div className="flex items-center justify-end mt-1 text-[9px] text-rose-300/80 font-sans">
                         <span>Toca para ampliar</span>
-                        <Maximize2 className="w-3 h-3 opacity-70 group-hover:opacity-100" />
+                        <Maximize2 className="w-3 h-3 opacity-70 group-hover:opacity-100 ml-1" />
                       </div>
                     </div>
                   </motion.div>
@@ -268,11 +254,6 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                     <span className="text-xs font-cinzel font-bold text-amber-300">
                       Foto {lightboxIndex + 1} de {photos.length}
                     </span>
-                    {photos[lightboxIndex].isPrimary && (
-                      <span className="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-[10px] font-cinzel font-bold">
-                        ⭐ Foto Principal
-                      </span>
-                    )}
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -332,9 +313,6 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
 
                 {/* Caption Footer */}
                 <div className="w-full text-center mt-3 px-4">
-                  <p className="text-sm font-serif font-semibold text-rose-100">
-                    {photos[lightboxIndex].caption}
-                  </p>
                   <p className="text-[11px] font-serif italic text-rose-300/80 mt-0.5">
                     Celebrando los 15 Años de {quinceaneraName}
                   </p>

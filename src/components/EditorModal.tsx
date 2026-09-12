@@ -119,7 +119,7 @@ export const EditorModal: React.FC<EditorModalProps> = ({
     if (!files || files.length === 0) return;
     
     // We can upload multiple files at once for gallery, one for hero
-    for (const file of Array.from(files)) {
+    for (const file of Array.from(files) as File[]) {
       const reader = new FileReader();
       
       const processImage = async (base64Url: string) => {

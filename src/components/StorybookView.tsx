@@ -334,7 +334,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                   ? 'ÉRASE UNA VEZ UNA PRINCESA QUE SOÑABA CON SU CUENTO DE HADAS...'
                   : (data.titlePhrase || 'Érase una vez una princesa que soñaba con su cuento de hadas...')}
               </p>
-              <p className="text-[9.5px] sm:text-[10px] font-serif italic text-rose-200/90 mt-1 max-w-xs">
+              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-1 max-w-xs">
                 "Un sueño que florece bajo la luz de las estrellas para recordar por siempre."
               </p>
             </div>
@@ -367,7 +367,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                 <span>LA ESPERA & FECHA REAL</span>
                 <span className="text-rose-300 text-[10px]">✦</span>
               </div>
-              <p className="text-[9.5px] font-serif italic text-rose-200/90 mt-0.5">
+              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-0.5">
                 "Cada segundo que pasa nos acerca al comienzo de una noche soñada."
               </p>
             </div>
@@ -444,7 +444,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                 <span>EL SALÓN & DRESS CODE</span>
                 <span className="text-rose-300 text-[10px]">✦</span>
               </div>
-              <p className="text-[9.5px] font-serif italic text-rose-200/90 mt-0.5">
+              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-0.5">
                 "Un castillo encantado para celebrar juntos la magia de mis 15 años."
               </p>
             </div>
@@ -482,7 +482,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               {/* Dress Code Card */}
               <div className="rounded-2xl bg-[#35152d]/90 border border-rose-300/35 p-3 text-center shadow-md">
                 <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <Shirt className="w-3.5 h-3.5 text-rose-300" />
+                  <span className="text-[14px]">👗 👔</span>
                   <span className="text-[10px] font-cinzel uppercase tracking-[0.2em] font-bold text-rose-200">
                     CÓDIGO DE VESTIMENTA
                   </span>
@@ -550,7 +550,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
 
               {/* Top Beautiful Quote */}
               <div className="w-full max-w-xs px-2.5 py-1 rounded-xl bg-gradient-to-r from-[#441935]/80 via-[#5a2144]/80 to-[#441935]/80 border border-rose-300/30 text-center shadow-xs">
-                <p className="text-[10px] sm:text-[11px] font-serif italic text-rose-100 leading-snug">
+                <p className="text-xs sm:text-sm font-serif italic text-rose-100 leading-snug">
                   "Cada fotografía guarda un instante mágico de este hermoso camino hacia mis 15 años."
                 </p>
               </div>
@@ -572,17 +572,8 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                       (e.target as HTMLElement).style.display = 'none';
                     }}
                   />
-                  {/* Golden Badge for Main Photo */}
-                  <div className="absolute top-1.5 left-2 px-2 py-0.5 rounded-full bg-amber-400/95 text-stone-950 text-[8.5px] font-cinzel font-bold tracking-wider flex items-center gap-1 shadow-sm">
-                    <Star className="w-2.5 h-2.5 fill-current" />
-                    <span>FOTO PRINCIPAL: MIS 15 AÑOS</span>
-                  </div>
-
                   {/* Caption Gradient Banner */}
-                  <div className="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between">
-                    <span className="text-[10px] font-serif font-semibold text-rose-100 truncate max-w-[190px]">
-                      {mainPhoto.caption}
-                    </span>
+                  <div className="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-end">
                     <span className="text-[8.5px] font-cinzel text-amber-300 flex items-center gap-0.5">
                       Ampliar ➔
                     </span>
@@ -649,7 +640,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                 <span>OPCIÓN DE REGALO</span>
                 <span className="text-rose-300 text-[10px]">✦</span>
               </div>
-              <p className="text-[9.5px] font-serif italic text-rose-200/90 mt-0.5">
+              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-0.5">
                 "Tu cariño y tu compañía son mi bendición más grande."
               </p>
             </div>
@@ -659,7 +650,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               
               {/* Gift note intro */}
               <div className="text-center px-2">
-                <p className="text-[11px] sm:text-xs font-serif text-rose-100/95 leading-relaxed italic">
+                <p className="text-sm sm:text-base font-serif text-rose-100/95 leading-relaxed italic">
                   Tu presencia es mi mayor y más hermoso regalo. Si deseas hacerme un presente para dar comienzo a este sueño, te comparto esta opción con mucho cariño:
                 </p>
               </div>
@@ -755,7 +746,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                 <span>CONFIRMA TU ASISTENCIA</span>
                 <span className="text-rose-300 text-[10px]">✦</span>
               </div>
-              <p className="text-[10px] font-serif italic text-rose-200/90 mt-0.5">
+              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-0.5">
                 "Este cuento de hadas no estaría completo sin ti. Tu presencia hará brillar mi noche ♥"
               </p>
             </div>
@@ -1099,7 +1090,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                     {data.quinceaneraName}
                   </h3>
                   <div className="w-20 h-[1px] bg-gradient-to-r from-transparent via-amber-300/60 to-transparent my-1.5" />
-                  <span className="text-[10px] font-serif italic text-rose-200/80">
+                  <span className="text-xs sm:text-sm font-serif italic text-rose-200/80">
                     {data.dateDisplay.day} de {data.dateDisplay.month} · {data.dateDisplay.year}
                   </span>
                   <p className="text-[9px] font-serif italic text-rose-200/70 mt-1 max-w-[200px]">
@@ -1142,13 +1133,6 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             <ChevronLeft className="w-3.5 h-3.5" />
             <span>Hoja Anterior</span>
           </button>
-
-          {/* Chapter Title Badge */}
-          <div className="text-center truncate px-1">
-            <span className="block text-[9.5px] font-cinzel uppercase tracking-widest text-amber-300 font-bold">
-              ✦ {currentChapter.title} ✦
-            </span>
-          </div>
 
           <button
             onClick={handleNext}
