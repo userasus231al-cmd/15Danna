@@ -769,7 +769,8 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               <img 
                 src={castleHeroImage}
                 alt=""
-                className="w-full h-full object-cover object-top scale-[2.5] origin-top filter brightness-[1.15] contrast-[1.05]"
+                className="w-full h-full object-cover filter brightness-[1.15] contrast-[1.05]"
+                style={{ objectPosition: 'center 35%', transform: 'scale(2) translateY(-5%)' }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/30 to-[#1a0816]/95" />
             </div>
