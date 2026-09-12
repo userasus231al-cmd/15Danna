@@ -88,12 +88,12 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px] text-amber-300">✦</span>
                   <h3 className="font-cinzel text-sm sm:text-base font-bold text-rose-100 tracking-wider uppercase">
-                    Álbum de Recuerdos de {quinceaneraName}
+                    Álbum de {quinceaneraName}
                   </h3>
                   <span className="text-[10px] text-amber-300">✦</span>
                 </div>
                 <p className="text-[11px] font-serif italic text-rose-300/85">
-                  Momentos mágicos e inolvidables de mis 15 años
+                  Capturando la magia de la espera del gran día
                 </p>
               </div>
             </div>
@@ -249,15 +249,7 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                 {/* Caption Footer */}
                 <div className="w-full text-center mt-3 px-4">
                   <p className="text-[11px] font-serif italic text-rose-300/80 mt-0.5">
-                    {lightboxIndex !== null ? [
-                      "Un momento mágico ✦",
-                      "✦ Día de ensueño ✦",
-                      "Capturando la magia",
-                      "Sonrisas eternas",
-                      "✦ Recuerdos inolvidables",
-                      "Instantes de felicidad",
-                      "Un cuento de hadas ✦"
-                    ][lightboxIndex % 7] : ""}
+                    {lightboxIndex !== null ? photos[lightboxIndex].caption : ""}
                   </p>
                 </div>
               </div>

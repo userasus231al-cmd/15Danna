@@ -569,7 +569,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               <Crown className="w-4 h-4 text-amber-400 fill-amber-400/40 mb-0.5" />
               <div className="flex items-center gap-1.5 font-cinzel font-bold text-xs uppercase tracking-[0.2em] text-rose-100 mb-1">
                 <span className="text-rose-300 text-[10px]">✦</span>
-                <span>ÁLBUM DE FOTOS & RECUERDOS</span>
+                <span>ÁLBUM DE {data.quinceaneraName}</span>
                 <span className="text-rose-300 text-[10px]">✦</span>
               </div>
 

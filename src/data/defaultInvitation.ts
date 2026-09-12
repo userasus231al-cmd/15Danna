@@ -105,7 +105,7 @@ export const DEFAULT_INVITATION_DATA: InvitationData = {
     {
       id: 'photo-1',
       url: '/photos/WhatsApp Image 2026-09-10 at 16.40.30.jpeg',
-      caption: 'Mis 15 Años Soñados (Con mis globos dorados)',
+      caption: 'Un momento mágico ✦',
       category: 'quince',
       isPrimary: true,
       aspectRatio: 'portrait'
@@ -113,42 +113,42 @@ export const DEFAULT_INVITATION_DATA: InvitationData = {
     {
       id: 'photo-2',
       url: '/photos/WhatsApp Image 2026-09-10 at 16.44.36.jpeg',
-      caption: 'Mirando Hacia el Futuro con Ilusión',
+      caption: '✦ Día de ensueño ✦',
       category: 'quince',
       aspectRatio: 'portrait'
     },
     {
       id: 'photo-3',
       url: '/photos/WhatsApp Image 2026-09-10 at 16.47.11.jpeg',
-      caption: 'Princesa Junto al Lago y la Fuente',
+      caption: 'Capturando la magia',
       category: 'quince',
       aspectRatio: 'portrait'
     },
     {
       id: 'photo-4',
       url: '/photos/WhatsApp Image 2026-09-10 at 16.48.13.jpeg',
-      caption: 'Deseos de Ensueño y Pastel de 15 Años',
+      caption: 'Sonrisas eternas',
       category: 'quince',
       aspectRatio: 'portrait'
     },
     {
       id: 'photo-5',
       url: '/photos/WhatsApp Image 2026-09-10 at 17.41.07.jpeg',
-      caption: 'Retrato Real de la Quinceañera',
+      caption: '✦ Recuerdos inolvidables',
       category: 'quince',
       aspectRatio: 'portrait'
     },
     {
       id: 'photo-6',
       url: '/photos/WhatsApp Image 2026-09-10 at 17.41.46.jpeg',
-      caption: 'Sonrisa Encantada Frente a las Aguas',
+      caption: 'Instantes de felicidad',
       category: 'quince',
       aspectRatio: 'portrait'
     },
     {
       id: 'photo-7',
       url: '/photos/WhatsApp Image 2026-09-10 at 17.42.13.jpeg',
-      caption: 'Tarde Mágica en la Naturaleza',
+      caption: 'Un cuento de hadas ✦',
       category: 'quince',
       aspectRatio: 'portrait'
     },
