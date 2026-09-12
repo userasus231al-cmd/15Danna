@@ -283,13 +283,13 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
         return (
           <div className="w-full h-full flex flex-col justify-between items-center text-center relative overflow-hidden py-1">
             {/* Background Fairytale Castle Image */}
-            <div className="absolute inset-0 z-0 opacity-40 rounded-2xl overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 opacity-75 rounded-2xl overflow-hidden pointer-events-none">
               <img
                 src={castleHeroImage}
                 alt="Princesa en el Castillo de Cuento de Hadas"
-                className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.05]"
+                className="w-full h-full object-cover object-center filter brightness-[1.1] contrast-[1.05]"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/80 via-transparent to-[#1a0816]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/60 via-transparent to-[#1a0816]/90" />
             </div>
 
             {/* Top Floating Music Badge */}

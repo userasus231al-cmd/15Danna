@@ -199,22 +199,6 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({
           <span className="truncate font-medium">{activeTrack.title}</span>
         </motion.div>
 
-        {/* Change Track Trigger (Protected for the quinceañera) */}
-        <button
-          id="open-music-modal-btn"
-          onClick={() => {
-            if (onOpenMusicSettings) {
-              onOpenMusicSettings();
-            } else {
-              setIsModalOpen(true);
-            }
-          }}
-          className="p-2.5 rounded-full bg-stone-900/90 border border-amber-500/40 text-amber-300 hover:bg-amber-950/50 hover:border-amber-300 shadow-lg backdrop-blur-md transition-all cursor-pointer"
-          title="Personalizar música (Acceso con contraseña)"
-        >
-          <Music className="w-4 h-4" />
-        </button>
-
         {/* Spinning Vinyl Play/Pause Button */}
         <button
           id="toggle-music-play-btn"
