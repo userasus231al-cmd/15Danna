@@ -843,16 +843,16 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </form>
 
             {/* Farewell Signature */}
-            <div className="flex flex-col items-center -mt-1 sm:mt-0 pb-1 z-10 relative">
+            <div className="flex flex-col items-center -mt-1 sm:mt-0 pb-1 z-10 relative text-center">
+              <span className="text-xs sm:text-sm font-serif text-rose-300/80 italic mb-1 drop-shadow-md">
+                "¡Te espero con ilusión para vivir juntos una noche mágica e inolvidable!" ✨
+              </span>
               <p
                 className="text-4xl sm:text-5xl text-rose-200 font-script leading-none"
                 style={{ fontFamily: "'Great Vibes', cursive" }}
               >
                 {data.quinceaneraName}
               </p>
-              <span className="text-xs sm:text-sm font-serif text-rose-300/80 italic mt-1 drop-shadow-md">
-                "¡Te espero con ilusión para vivir juntos una noche mágica e inolvidable!" ✨
-              </span>
             </div>
           </div>
         );
