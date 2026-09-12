@@ -293,12 +293,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </div>
 
             {/* Top Floating Music Badge */}
-            <div className="relative z-10 w-full flex justify-between items-center px-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-              <div className="flex items-center gap-1 text-[10px] font-cinzel text-amber-300 font-bold uppercase tracking-wider drop-shadow-md">
-                <Sparkles className="w-3 h-3 text-amber-300" />
-                <span className="text-white">Mis XV Años</span>
-              </div>
-
+            <div className="relative z-10 w-full flex justify-end items-center px-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               <button
                 onClick={onToggleMusic}
                 className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#3a1835]/90 hover:bg-[#4d2046] border border-rose-300/60 text-white text-[11px] backdrop-blur-md cursor-pointer transition-all active:scale-95 shadow-md"
