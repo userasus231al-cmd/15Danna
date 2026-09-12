@@ -86,7 +86,18 @@ export const EditorModal: React.FC<EditorModalProps> = ({
     };
   }, [activeTab, isOpen]);
 
-  const handleSaveAll = () => {
+  const handleSaveAll = async () => {
+    // Attempt global save
+    try {
+      await fetch('/api/save-invitation-config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+    } catch (err) {
+      console.log('Fallo guardado global', err);
+    }
+    
     onSave(formData);
     setShowSavedToast(true);
     setTimeout(() => {
@@ -103,20 +114,39 @@ export const EditorModal: React.FC<EditorModalProps> = ({
   };
 
   // Upload local photo from device
-  const handlePhotoFileUpload = (e: React.ChangeEvent<HTMLInputElement>, isHero: boolean = false) => {
+  const handlePhotoFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, isHero: boolean = false) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
-
-    Array.from(files).forEach((file: File) => {
+    
+    // We can upload multiple files at once for gallery, one for hero
+    for (const file of Array.from(files)) {
       const reader = new FileReader();
-      reader.onload = (event) => {
-        const base64Url = event.target?.result as string;
+      
+      const processImage = async (base64Url: string) => {
+        let finalUrl = base64Url;
+        
+        // Try uploading to server
+        try {
+          const res = await fetch('/api/upload-photo', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ filename: file.name, base64: base64Url })
+          });
+          
+          if (res.ok) {
+            const data = await res.json();
+            if (data.url) finalUrl = data.url;
+          }
+        } catch (err) {
+          console.log('Fallo subida a servidor, usando base64 local', err);
+        }
+        
         if (isHero) {
-          setFormData((prev) => ({ ...prev, heroPhotoUrl: base64Url }));
+          setFormData((prev) => ({ ...prev, heroPhotoUrl: finalUrl }));
         } else {
           const newPhoto: GalleryPhoto = {
             id: 'photo-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5),
-            url: base64Url,
+            url: finalUrl,
             caption: file.name.replace(/\.[^/.]+$/, ''),
             aspectRatio: 'portrait'
           };
@@ -126,8 +156,14 @@ export const EditorModal: React.FC<EditorModalProps> = ({
           }));
         }
       };
+      
+      reader.onload = (event) => {
+        if (event.target?.result) {
+          processImage(event.target.result as string);
+        }
+      };
       reader.readAsDataURL(file);
-    });
+    }
   };
 
   // Add photo via URL

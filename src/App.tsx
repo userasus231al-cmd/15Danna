@@ -70,7 +70,7 @@ export default function App() {
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const [storybookKey, setStorybookKey] = useState(0);
 
-  // Fetch global music config on mount
+  // Fetch global config on mount (Music & Photos)
   React.useEffect(() => {
     fetch('/invitation-config.json?t=' + new Date().getTime())
       .then((res) => {
@@ -78,21 +78,25 @@ export default function App() {
         throw new Error('Config not found');
       })
       .then((data) => {
-        if (data && data.selectedTrackId) {
+        if (data) {
           setInvitationData((prev) => {
             const updated = {
               ...prev,
-              selectedTrackId: data.selectedTrackId,
+              ...data, // merge all global fields!
+              // Ensure we don't accidentally overwrite with nulls
+              selectedTrackId: data.selectedTrackId || prev.selectedTrackId,
               customTrackUrl: data.customTrackUrl || prev.customTrackUrl,
               customTrackTitle: data.customTrackTitle || prev.customTrackTitle,
             };
+            // Remove updatedAt to avoid polluting the app state
+            delete updated.updatedAt;
             // Also update local storage so it persists between reloads
             localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
             return updated;
           });
         }
       })
-      .catch((err) => console.log('Using local music config or defaults', err));
+      .catch((err) => console.log('Using local config or defaults', err));
   }, []);
 
   // Save to LocalStorage whenever data changes
