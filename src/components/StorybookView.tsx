@@ -748,25 +748,24 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
         return (
           <div className="w-full h-full flex flex-col justify-between items-center text-center py-1 relative overflow-hidden">
             {/* Full Background Image */}
-            <div className="absolute inset-0 z-0 opacity-70 rounded-2xl overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 rounded-2xl overflow-hidden pointer-events-none">
               <img 
-                src={cinderellaCastleImage}
+                src={castleHeroImage}
                 alt=""
-                className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.1]"
+                className="w-full h-full object-cover object-top scale-[1.4] origin-top filter brightness-[1.15] contrast-[1.05]"
               />
-              <div className="absolute inset-0 bg-[#1a0816]/30" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/30 to-[#1a0816]/95" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/10 to-[#1a0816]/95" />
             </div>
             
             {/* Header */}
-            <div className="flex flex-col items-center z-10 relative">
-              <Crown className="w-4 h-4 text-amber-400 fill-amber-400/40 mb-0.5" />
-              <div className="flex items-center gap-1.5 font-cinzel font-bold text-xs uppercase tracking-[0.2em] text-rose-100">
+            <div className="flex flex-col items-center z-10 relative drop-shadow-md">
+              <Crown className="w-4 h-4 text-amber-400 fill-amber-400/40 mb-0.5 drop-shadow" />
+              <div className="flex items-center gap-1.5 font-cinzel font-bold text-xs uppercase tracking-[0.2em] text-rose-100 drop-shadow">
                 <span className="text-rose-300 text-[10px]">✦</span>
                 <span>CONFIRMA TU ASISTENCIA</span>
                 <span className="text-rose-300 text-[10px]">✦</span>
               </div>
-              <p className="text-xs sm:text-sm font-serif italic text-rose-200/90 mt-0.5">
+              <p className="text-xs sm:text-sm font-serif italic text-rose-100 mt-0.5 drop-shadow-md font-medium">
                 "Este cuento de hadas no estaría completo sin ti. Tu presencia hará brillar mi noche ♥"
               </p>
             </div>
