@@ -747,14 +747,15 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
       case 5:
         return (
           <div className="w-full h-full flex flex-col justify-between items-center text-center py-1 relative overflow-hidden">
-            {/* Background Image at Bottom */}
-            <div className="absolute bottom-0 left-0 right-0 h-[55%] z-0 opacity-50 mix-blend-screen pointer-events-none flex justify-center items-end">
+            {/* Full Background Image */}
+            <div className="absolute inset-0 z-0 opacity-40 rounded-2xl overflow-hidden pointer-events-none">
               <img 
                 src={castleHeroImage}
                 alt=""
-                className="w-full h-full object-contain object-bottom"
-                style={{ maskImage: 'linear-gradient(to bottom, transparent, black 20%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 20%)' }}
+                className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.05]"
               />
+              <div className="absolute inset-0 bg-[#1a0816]/40 backdrop-blur-[1px]" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/80 via-transparent to-[#1a0816]/90" />
             </div>
             
             {/* Header */}
