@@ -659,7 +659,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               
               {/* Gift note intro */}
               <div className="text-center px-2">
-                <p className="text-sm sm:text-base font-serif text-rose-100/95 leading-relaxed italic">
+                <p className="text-xs sm:text-sm font-serif text-rose-100/95 leading-relaxed italic">
                   Tu presencia es mi mayor y más hermoso regalo. Si deseas hacerme un presente para dar comienzo a este sueño, te comparto esta opción con mucho cariño:
                 </p>
               </div>
@@ -746,9 +746,19 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
 
       case 5:
         return (
-          <div className="w-full h-full flex flex-col justify-between items-center text-center py-1">
+          <div className="w-full h-full flex flex-col justify-between items-center text-center py-1 relative overflow-hidden">
+            {/* Background Image at Bottom */}
+            <div className="absolute bottom-0 left-0 right-0 h-[50%] z-0 opacity-40 mix-blend-screen pointer-events-none">
+              <img 
+                src={castleHeroImage}
+                alt=""
+                className="w-full h-full object-cover object-bottom"
+                style={{ maskImage: 'linear-gradient(to bottom, transparent, black 40%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 40%)' }}
+              />
+            </div>
+            
             {/* Header */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center z-10 relative">
               <Crown className="w-4 h-4 text-amber-400 fill-amber-400/40 mb-0.5" />
               <div className="flex items-center gap-1.5 font-cinzel font-bold text-xs uppercase tracking-[0.2em] text-rose-100">
                 <span className="text-rose-300 text-[10px]">✦</span>
@@ -761,7 +771,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </div>
 
             {/* RSVP Form Card */}
-            <form onSubmit={handleSendWhatsAppRsvp} className="w-full max-w-sm bg-[#35152d]/90 border border-rose-300/40 rounded-2xl p-3 sm:p-3.5 space-y-2 text-left my-auto shadow-md">
+            <form onSubmit={handleSendWhatsAppRsvp} className="relative z-10 w-full max-w-sm bg-[#35152d]/90 border border-rose-300/40 rounded-2xl p-3 sm:p-3.5 space-y-2 text-left my-auto shadow-md">
               <div>
                 <label className="block text-[9px] font-cinzel uppercase text-rose-200 tracking-wider mb-0.5">
                   Nombre / Familia
@@ -818,22 +828,14 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             </form>
 
             {/* Farewell Signature */}
-            <div className="flex flex-col items-center -mt-1 sm:mt-0 pb-1">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-amber-300/40 shadow-lg mb-1 relative bg-[#35152d]">
-                <img
-                  src={princessRsvpImage}
-                  alt="Princesa Cuento de Hadas"
-                  className="w-full h-full object-cover object-top opacity-90"
-                />
-                <div className="absolute inset-0 rounded-full ring-inset ring-2 ring-rose-300/20" />
-              </div>
+            <div className="flex flex-col items-center -mt-1 sm:mt-0 pb-1 z-10 relative">
               <p
                 className="text-4xl sm:text-5xl text-rose-200 font-script leading-none"
                 style={{ fontFamily: "'Great Vibes', cursive" }}
               >
                 {data.quinceaneraName}
               </p>
-              <span className="text-xs sm:text-sm font-serif text-rose-300/80 italic mt-1">
+              <span className="text-xs sm:text-sm font-serif text-rose-300/80 italic mt-1 drop-shadow-md">
                 "¡Te espero con ilusión para vivir juntos una noche mágica e inolvidable!" ✨
               </span>
             </div>
