@@ -257,18 +257,6 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                   </div>
 
                   <div className="flex items-center gap-2">
-                    {onSetHeroPhoto && (
-                      <button
-                        onClick={() => {
-                          onSetHeroPhoto(photos[lightboxIndex].url);
-                        }}
-                        className="px-3 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-200 text-xs font-cinzel font-bold flex items-center gap-1.5 cursor-pointer"
-                        title="Establecer esta foto como la imagen principal de la invitación"
-                      >
-                        <Star className="w-3 h-3" />
-                        <span>Fijar como Principal</span>
-                      </button>
-                    )}
                     <button
                       onClick={() => setLightboxIndex(null)}
                       className="p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer"

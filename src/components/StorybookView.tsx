@@ -765,13 +765,14 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
         return (
           <div className="w-full h-full flex flex-col justify-between items-center text-center py-1 relative overflow-hidden">
             {/* Full Background Image */}
-            <div className="absolute inset-0 z-0 rounded-2xl overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 rounded-2xl overflow-hidden pointer-events-none bg-[#3a1226]">
               <img 
                 src={cinderellaCastleImage}
                 alt=""
-                className="w-full h-full object-cover filter brightness-[1.1] contrast-[1.05]"
+                className="w-full h-full object-cover mix-blend-luminosity opacity-90"
                 style={{ objectPosition: 'center 40%' }}
               />
+              <div className="absolute inset-0 bg-pink-500/30 mix-blend-color" />
               <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/30 to-[#1a0816]/95" />
             </div>
             
