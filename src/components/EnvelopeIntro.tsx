@@ -89,19 +89,6 @@ export const EnvelopeIntro: React.FC<EnvelopeIntroProps> = ({ data, onOpen, isOp
               transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-full h-full rounded-2xl border-2 border-[#e8a3b8] bg-gradient-to-b from-[#fdf4f6] via-[#fae6ec] to-[#f4d2dc] shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(216,124,152,0.3)] overflow-visible"
             >
-              {/* Vintage Rose Corner Crest Watermarks on Envelope */}
-              <img
-                src={vintageRoseImage}
-                alt="Rosa"
-                className="absolute top-1 right-1 w-20 h-20 opacity-25 object-contain rotate-12 pointer-events-none z-10"
-              />
-              <img
-                src={vintageRoseImage}
-                alt="Rosa"
-                className="absolute bottom-1 left-1 w-20 h-20 opacity-20 object-contain -rotate-45 pointer-events-none z-10"
-              />
-
-              {/* Envelope Inner Pocket Liner (visible when flap opens) */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#3a1228] via-[#2a0c1d] to-[#1e0714] overflow-hidden border border-rose-900/40">
                 <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#fbbf24_1px,transparent_1px)] [background-size:16px_16px]" />
               </div>
@@ -222,11 +209,11 @@ export const EnvelopeIntro: React.FC<EnvelopeIntroProps> = ({ data, onOpen, isOp
                 {/* Elegant Satin Ribbon Tails peeking out under the wax seal */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 flex items-center justify-center gap-1.5 pointer-events-none">
                   {/* Left ribbon tail */}
-                  <div className="w-4 h-12 bg-gradient-to-b from-[#8f2142] via-[#a83257] to-[#701630] -rotate-[22deg] origin-top rounded-b shadow-md border-x border-[#c9597e]/40"
+                  <div className="w-4 h-12 bg-gradient-to-b from-[#e11d48] via-[#be185d] to-[#9d174d] -rotate-[22deg] origin-top rounded-b shadow-md border-x border-[#f43f5e]/40"
                     style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)' }}
                   />
                   {/* Right ribbon tail */}
-                  <div className="w-4 h-12 bg-gradient-to-b from-[#8f2142] via-[#a83257] to-[#701630] rotate-[22deg] origin-top rounded-b shadow-md border-x border-[#c9597e]/40"
+                  <div className="w-4 h-12 bg-gradient-to-b from-[#e11d48] via-[#be185d] to-[#9d174d] rotate-[22deg] origin-top rounded-b shadow-md border-x border-[#f43f5e]/40"
                     style={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%)' }}
                   />
                 </div>
@@ -242,19 +229,19 @@ export const EnvelopeIntro: React.FC<EnvelopeIntroProps> = ({ data, onOpen, isOp
                   className="relative group w-22 h-22 sm:w-24 sm:h-24 rounded-full cursor-pointer flex items-center justify-center transition-all duration-300 select-none"
                 >
                   {/* Organic Irregular Hot Wax Scallop Edge */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ba365d] via-[#8f1d3e] to-[#591024] shadow-[0_10px_25px_rgba(117,20,48,0.65),0_0_20px_rgba(232,157,180,0.4)] border border-[#e89db4]/50 group-hover:shadow-[0_12px_30px_rgba(186,54,93,0.8),0_0_25px_rgba(251,191,36,0.6)] transition-all duration-300">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#f43f5e] via-[#e11d48] to-[#be185d] shadow-[0_10px_25px_rgba(225,29,72,0.65),0_0_20px_rgba(251,113,133,0.4)] border border-[#fb7185]/50 group-hover:shadow-[0_12px_30px_rgba(225,29,72,0.8),0_0_25px_rgba(251,191,36,0.6)] transition-all duration-300">
                     {/* Organic melted wax droplets / contours around rim */}
-                    <div className="absolute -top-1 left-2 w-3.5 h-3.5 rounded-full bg-[#8f1d3e] opacity-80" />
-                    <div className="absolute -bottom-1 right-2.5 w-4 h-3.5 rounded-full bg-[#701630] opacity-80" />
-                    <div className="absolute top-4 -right-1 w-3 h-3 rounded-full bg-[#ba365d] opacity-80" />
-                    <div className="absolute top-5 -left-1 w-3.5 h-3.5 rounded-full bg-[#8f1d3e] opacity-80" />
+                    <div className="absolute -top-1 left-2 w-3.5 h-3.5 rounded-full bg-[#e11d48] opacity-80" />
+                    <div className="absolute -bottom-1 right-2.5 w-4 h-3.5 rounded-full bg-[#be185d] opacity-80" />
+                    <div className="absolute top-4 -right-1 w-3 h-3 rounded-full bg-[#f43f5e] opacity-80" />
+                    <div className="absolute top-5 -left-1 w-3.5 h-3.5 rounded-full bg-[#e11d48] opacity-80" />
                   </div>
 
                   {/* Raised Beaded Gold/Rose Rim */}
-                  <div className="absolute inset-1.5 rounded-full border-2 border-dashed border-[#fbcfe8]/40 flex items-center justify-center pointer-events-none" />
+                  <div className="absolute inset-1.5 rounded-full border-2 border-dashed border-[#fbcfe8]/50 flex items-center justify-center pointer-events-none" />
 
                   {/* Inner Recessed Stamp Depression */}
-                  <div className="relative w-[76%] h-[76%] rounded-full bg-gradient-to-b from-[#701630] via-[#591024] to-[#400817] flex flex-col items-center justify-center text-rose-100 shadow-[inset_0_3px_8px_rgba(0,0,0,0.8)] border border-[#f472b6]/30">
+                  <div className="relative w-[76%] h-[76%] rounded-full bg-gradient-to-b from-[#be185d] via-[#9d174d] to-[#831843] flex flex-col items-center justify-center text-rose-100 shadow-[inset_0_3px_8px_rgba(0,0,0,0.7)] border border-[#f43f5e]/40">
                     {/* Wax Sheen Highlight */}
                     <div className="absolute top-1 inset-x-2 h-3.5 bg-gradient-to-b from-white/30 to-transparent rounded-full pointer-events-none" />
 
