@@ -6,7 +6,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Camera,
-  Upload,
   Star,
   Maximize2
 } from 'lucide-react';
@@ -19,7 +18,6 @@ interface FairytaleAlbumModalProps {
   quinceaneraName: string;
   heroPhotoUrl?: string;
   onSetHeroPhoto?: (url: string) => void;
-  onUploadPhotos?: (newPhotos: GalleryPhoto[]) => void;
 }
 
 export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
@@ -28,8 +26,7 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
   photos,
   quinceaneraName,
   heroPhotoUrl,
-  onSetHeroPhoto,
-  onUploadPhotos
+  onSetHeroPhoto
 }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
@@ -64,38 +61,6 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
 
   const handleImageError = (id: string) => {
     setImageErrors((prev) => ({ ...prev, [id]: true }));
-  };
-
-  // Local multiple file upload handler
-  const handleBulkUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (!files || files.length === 0 || !onUploadPhotos) return;
-
-    const uploadedList: GalleryPhoto[] = [];
-    let processed = 0;
-
-    Array.from(files).forEach((file: File, idx) => {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const base64 = event.target?.result as string;
-        const isBalloons = file.name.toLowerCase().includes('15') || file.name.toLowerCase().includes('globo') || idx === 0;
-        
-        uploadedList.push({
-          id: `uploaded-${Date.now()}-${idx}`,
-          url: base64,
-          caption: file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' '),
-          category: 'quince',
-          isPrimary: isBalloons,
-          aspectRatio: 'portrait'
-        });
-
-        processed++;
-        if (processed === files.length) {
-          onUploadPhotos(uploadedList);
-        }
-      };
-      reader.readAsDataURL(file);
-    });
   };
 
   if (!isOpen) return null;
@@ -152,24 +117,6 @@ export const FairytaleAlbumModal: React.FC<FairytaleAlbumModalProps> = ({
                 Todas las Fotografías ({photos.length})
               </span>
             </div>
-
-            {/* Quick Upload Action */}
-            <label
-              htmlFor="album-quick-bulk-upload"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-200 text-xs font-cinzel font-bold tracking-wider cursor-pointer transition-all shadow-xs"
-              title="Cargar o actualizar fotos desde tu dispositivo"
-            >
-              <Upload className="w-3.5 h-3.5 text-amber-300" />
-              <span>Subir Fotos</span>
-            </label>
-            <input
-              id="album-quick-bulk-upload"
-              type="file"
-              accept="image/*"
-              multiple
-              onChange={handleBulkUpload}
-              className="hidden"
-            />
           </div>
 
           {/* Photo Grid (Scrollable) */}

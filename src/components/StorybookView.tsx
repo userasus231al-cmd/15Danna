@@ -1319,11 +1319,6 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
             onUpdateData({ ...data, heroPhotoUrl: url });
           }
         }}
-        onUploadPhotos={(newPhotos) => {
-          if (onUpdateData) {
-            onUpdateData({ ...data, photos: [...newPhotos, ...data.photos] });
-          }
-        }}
       />
 
     </div>
