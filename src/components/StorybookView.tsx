@@ -34,6 +34,7 @@ import { triggerPageTurnSparkles } from '../utils/sparkleEffects';
 import { playPageFlipSound } from '../utils/audioSynth';
 import vintageRoseImage from '../assets/images/vintage_pink_rose_crest_1788045608311.jpg';
 import castleHeroImage from '../assets/images/fairytale_princess_castle_1788045594056.jpg';
+import princessRsvpImage from "../assets/images/princess_rsvp_1789218445844.jpg";
 import { FairytaleAlbumModal } from './FairytaleAlbumModal';
 import { FallingRosePetals } from './FallingRosePetals';
 
@@ -482,7 +483,7 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
               {/* Dress Code Card */}
               <div className="rounded-2xl bg-[#35152d]/90 border border-rose-300/35 p-3 text-center shadow-md">
                 <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <span className="text-[14px]">👗 👔</span>
+                  <Shirt className="w-4 h-4 text-rose-300" />
                   <span className="text-[10px] font-cinzel uppercase tracking-[0.2em] font-bold text-rose-200">
                     CÓDIGO DE VESTIMENTA
                   </span>
@@ -806,6 +807,14 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
 
             {/* Farewell Signature */}
             <div className="flex flex-col items-center -mt-1 sm:mt-0 pb-1">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-amber-300/40 shadow-lg mb-1 relative bg-[#35152d]">
+                <img
+                  src={princessRsvpImage}
+                  alt="Princesa Cuento de Hadas"
+                  className="w-full h-full object-cover object-top opacity-90"
+                />
+                <div className="absolute inset-0 rounded-full ring-inset ring-2 ring-rose-300/20" />
+              </div>
               <p
                 className="text-4xl sm:text-5xl text-rose-200 font-script leading-none"
                 style={{ fontFamily: "'Great Vibes', cursive" }}
@@ -1025,18 +1034,6 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
                 <div className="absolute bottom-2 left-3 text-amber-400/40 pointer-events-none text-xs font-serif z-20">✦</div>
                 <div className="absolute bottom-2 right-2 text-amber-400/40 pointer-events-none text-xs font-serif z-20">✦</div>
 
-                {/* Bottom Right Curled Corner Dog-Ear Cue */}
-                {currentPage < totalPages - 1 && (
-                  <div
-                    onClick={handleNext}
-                    className="absolute bottom-0 right-0 z-30 cursor-pointer group flex items-end justify-end p-1"
-                    title="Toca para hojear a la siguiente página"
-                  >
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 bg-gradient-to-tl from-amber-300/35 via-rose-300/25 to-transparent border-t border-l border-amber-300/50 rounded-tl-xl transition-all duration-300 group-hover:scale-125 group-hover:from-amber-300/60 flex items-center justify-center pl-1 pt-1 shadow-md">
-                      <Sparkles className="w-2.5 h-2.5 text-amber-200 opacity-70 group-hover:opacity-100 group-hover:animate-spin" />
-                    </div>
-                  </div>
-                )}
 
                 {/* Front Content */}
                 {renderChapterContent(currentPage)}
