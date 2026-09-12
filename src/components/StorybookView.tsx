@@ -34,7 +34,7 @@ import { triggerPageTurnSparkles } from '../utils/sparkleEffects';
 import { playPageFlipSound } from '../utils/audioSynth';
 import vintageRoseImage from '../assets/images/vintage_pink_rose_crest_1788045608311.jpg';
 import castleHeroImage from '../assets/images/fairytale_princess_castle_1788045594056.jpg';
-import princessRsvpImage from "../assets/images/princess_rsvp_1789218445844.jpg";
+import cinderellaCastleImage from '../assets/images/cinderella_castle_night.jpg';
 import { FairytaleAlbumModal } from './FairytaleAlbumModal';
 import { FallingRosePetals } from './FallingRosePetals';
 
@@ -748,14 +748,14 @@ export const StorybookView: React.FC<StorybookViewProps> = ({
         return (
           <div className="w-full h-full flex flex-col justify-between items-center text-center py-1 relative overflow-hidden">
             {/* Full Background Image */}
-            <div className="absolute inset-0 z-0 opacity-40 rounded-2xl overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 opacity-70 rounded-2xl overflow-hidden pointer-events-none">
               <img 
-                src={castleHeroImage}
+                src={cinderellaCastleImage}
                 alt=""
-                className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.05]"
+                className="w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.1]"
               />
-              <div className="absolute inset-0 bg-[#1a0816]/40 backdrop-blur-[1px]" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/80 via-transparent to-[#1a0816]/90" />
+              <div className="absolute inset-0 bg-[#1a0816]/30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#2d1228]/70 via-[#1a0816]/30 to-[#1a0816]/95" />
             </div>
             
             {/* Header */}
